@@ -10,7 +10,6 @@ Source3: twm.xpm
 Source4: twm.xpm.large
 Source5: twm.xpm.mini
 License: MIT
-BuildRoot: %{_tmppath}/%{name}-root
 Requires: desktop-common-data
 
 BuildRequires: libx11-devel >= 1.0.0
