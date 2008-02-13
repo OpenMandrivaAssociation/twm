@@ -30,7 +30,9 @@ pointer button bindings.
 %setup -q -n %{name}-%{version}
 
 %build
-CFLAGS="$RPM_OPT_FLAGS -DSYSTEM_INIT_FILE='\"%{_sysconfdir}/X11/twm/system.twmrc\"'" %configure2_5x	--x-includes=%{_includedir}\
+
+CFLAGS="$RPM_OPT_FLAGS -DSYSTEM_INIT_FILE='\"%{_sysconfdir}/X11/twm/system.twmrc\"'" \
+%configure2_5x	--x-includes=%{_includedir}\
 		--x-libraries=%{_libdir}
 
 %make
@@ -39,9 +41,9 @@ CFLAGS="$RPM_OPT_FLAGS -DSYSTEM_INIT_FILE='\"%{_sysconfdir}/X11/twm/system.twmrc
 rm -rf %{buildroot}
 %makeinstall_std
 
-mkdir -p %{buildroot}/%{_sysconfdir}/{menu.d,X11/twm}
+mkdir -p %{buildroot}/{%{_menudir},%{_sysconfdir}/X11/twm}
 install -m 644 %{SOURCE1} %{buildroot}/%{_sysconfdir}/X11/twm/system.twmrc-menu
-install -m 755 %{SOURCE2} %{buildroot}/%{_sysconfdir}/menu.d
+install -m 755 %{SOURCE2} %{buildroot}/%{_menudir}
 
 #install icons
 mkdir -p %{buildroot}%{_datadir}/icons/large
@@ -62,7 +64,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %config(noreplace) %{_sysconfdir}/X11/twm
-%{_sysconfdir}/menu.d/twm
+%{_menudir}/twm
 %{_bindir}/twm
 %{_mandir}/man1/twm.*
 %{_datadir}/icons/twm.xpm
