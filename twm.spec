@@ -1,6 +1,6 @@
 Name: twm
 Version: 1.0.4
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: Tab Window Manager for the X Window System
 Group: Development/X11
 Source: http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
@@ -12,6 +12,7 @@ Source5: twm.xpm.mini
 License: MIT
 BuildRoot: %{_tmppath}/%{name}-root
 Requires: desktop-common-data
+Requires: x11-font-misc
 
 BuildRequires: libx11-devel >= 1.0.0
 BuildRequires: libxext-devel >= 1.0.0
