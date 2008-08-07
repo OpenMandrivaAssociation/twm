@@ -5,7 +5,6 @@ Summary: Tab Window Manager for the X Window System
 Group: Development/X11
 Source: http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
 Source1: system.twmrc
-Source2: twm
 Source3: twm.xpm
 Source4: twm.xpm.large
 Source5: twm.xpm.mini
@@ -42,9 +41,8 @@ CFLAGS="$RPM_OPT_FLAGS -DSYSTEM_INIT_FILE='\"%{_sysconfdir}/X11/twm/system.twmrc
 rm -rf %{buildroot}
 %makeinstall_std
 
-mkdir -p %{buildroot}/{%{_menudir},%{_sysconfdir}/X11/twm}
+mkdir -p %{buildroot}/%{_sysconfdir}/X11/twm
 install -m 644 %{SOURCE1} %{buildroot}/%{_sysconfdir}/X11/twm/system.twmrc-menu
-install -m 755 %{SOURCE2} %{buildroot}/%{_menudir}
 
 #install icons
 mkdir -p %{buildroot}%{_datadir}/icons/large
@@ -69,7 +67,6 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %config(noreplace) %{_sysconfdir}/X11/twm
-%{_menudir}/twm
 %{_bindir}/twm
 %{_mandir}/man1/twm.*
 %{_datadir}/icons/twm.xpm
