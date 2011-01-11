@@ -32,8 +32,7 @@ pointer button bindings.
 %build
 
 CFLAGS="$RPM_OPT_FLAGS -DSYSTEM_INIT_FILE='\"%{_sysconfdir}/X11/twm/system.twmrc\"'" \
-%configure2_5x	--x-includes=%{_includedir}\
-		--x-libraries=%{_libdir}
+%configure2_5x
 
 %make
 
@@ -53,16 +52,6 @@ install -m0644 %{SOURCE5} %{buildroot}%{_datadir}/icons/mini/twm.xpm
 
 %clean
 rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post
-%update_menus
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%endif
 
 %files
 %defattr(-,root,root)
