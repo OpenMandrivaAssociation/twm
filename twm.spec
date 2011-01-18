@@ -19,6 +19,7 @@ BuildRequires: libxmu-devel >= 1.0.0
 BuildRequires: libxt-devel >= 1.0.0
 BuildRequires: x11-util-macros >= 1.0.1
 BuildRequires: flex
+BuildRequires: byacc
 
 %description
 Twm is a window manager for the X Window System. It provides titlebars, shaped
