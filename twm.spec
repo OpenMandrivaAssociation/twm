@@ -1,9 +1,9 @@
 Name: twm
-Version: 1.0.6
-Release: 3
+Version: 1.0.8
+Release: 1
 Summary: Tab Window Manager for the X Window System
 Group: Development/X11
-Source: http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
+Source0: http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
 Source1: system.twmrc
 Source3: twm.xpm
 Source4: twm.xpm.large
@@ -37,7 +37,6 @@ CFLAGS="$RPM_OPT_FLAGS -DSYSTEM_INIT_FILE='\"%{_sysconfdir}/X11/twm/system.twmrc
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 mkdir -p %{buildroot}/%{_sysconfdir}/X11/twm
@@ -50,11 +49,7 @@ install -m0644 %{SOURCE3} %{buildroot}%{_datadir}/icons/twm.xpm
 install -m0644 %{SOURCE4} %{buildroot}%{_datadir}/icons/large/twm.xpm
 install -m0644 %{SOURCE5} %{buildroot}%{_datadir}/icons/mini/twm.xpm
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %config(noreplace) %{_sysconfdir}/X11/twm
 %{_bindir}/twm
 %{_mandir}/man1/twm.*
