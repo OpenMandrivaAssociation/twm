@@ -108,7 +108,7 @@ Function "right_iconmgr"
 #
 menu "defops"
 {
-"Mandriva Linux"	f.menu "xdg_menu"
+"OpenMandriva Linux"	f.menu "xdg_menu"
 ""              f.nop
 "Current Windows"             f.menu "TwmWindows"
 "Window Ops"                  f.menu "window_ops"
