@@ -1,6 +1,6 @@
 Name: twm
 Version: 1.0.9
-Release: 1
+Release: 2
 Summary: Tab Window Manager for the X Window System
 Group: Development/X11
 Source0: http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
