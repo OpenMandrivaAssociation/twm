@@ -16,6 +16,7 @@ BuildRequires: pkgconfig(x11) >= 1.0.0
 BuildRequires: pkgconfig(xext) >= 1.0.0
 BuildRequires: pkgconfig(xmu) >= 1.0.0
 BuildRequires: pkgconfig(xt) >= 1.0.0
+BuildRequires: pkgconfig(xrandr)
 BuildRequires: x11-util-macros >= 1.0.1
 BuildRequires: flex
 BuildRequires: byacc
