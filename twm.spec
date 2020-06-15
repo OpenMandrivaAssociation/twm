@@ -3,7 +3,7 @@ Version: 1.0.11
 Release: 1
 Summary: Tab Window Manager for the X Window System
 Group: Development/X11
-Source0: http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
+Source0: http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.xz
 Source1: system.twmrc
 Source3: twm.xpm
 Source4: twm.xpm.large
