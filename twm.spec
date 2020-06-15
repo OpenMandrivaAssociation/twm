@@ -1,6 +1,6 @@
 Name: twm
-Version: 1.0.10
-Release: 3
+Version: 1.0.11
+Release: 1
 Summary: Tab Window Manager for the X Window System
 Group: Development/X11
 Source0: http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
@@ -27,17 +27,17 @@ click-to-type and pointer-driven keyboard focus, and user-specified key and
 pointer button bindings.
 
 %prep
-%setup -q -n %{name}-%{version}
+%autosetup -p1
 
 %build
 
 CFLAGS="$RPM_OPT_FLAGS -DSYSTEM_INIT_FILE='\"%{_sysconfdir}/X11/twm/system.twmrc\"'" \
 %configure
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 mkdir -p %{buildroot}/%{_sysconfdir}/X11/twm
 install -m 644 %{SOURCE1} %{buildroot}/%{_sysconfdir}/X11/twm/system.twmrc-menu
