@@ -1,5 +1,5 @@
 Name: twm
-Version: 1.0.11
+Version: 1.0.12
 Release: 1
 Summary: Tab Window Manager for the X Window System
 Group: Development/X11
@@ -53,7 +53,7 @@ install -m0644 %{SOURCE5} %{buildroot}%{_datadir}/icons/mini/twm.xpm
 %files
 %config(noreplace) %{_sysconfdir}/X11/twm
 %{_bindir}/twm
-%{_mandir}/man1/twm.*
+%doc %{_mandir}/man1/twm.*
 %{_datadir}/icons/twm.xpm
 %{_datadir}/icons/*/twm.xpm
 %{_datadir}/X11/twm/system.twmrc
